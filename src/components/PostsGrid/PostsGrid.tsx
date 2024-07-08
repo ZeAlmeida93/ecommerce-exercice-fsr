@@ -1,25 +1,22 @@
-import PostsCard from '../PostsCard/PostsCard'
-import styles from './PostsGrid.module.css'
+import PostsCard from "../PostsCard/PostsCard";
+import styles from "./PostsGrid.module.css";
 
 //Usar isto
 
 const post = {
-    "postImage": "https://example.com/image1.jpg",
-    "categories": [
-        "Google",
-        "Trending",
-        "New"
-    ],
-    "title": "Loudest à la Madison #1 (L'integral)",
-    "summary": "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
-    "postDate": "22 July 2024",
-    "comments": 10,
-    "link": "/blog/link1"
-}
+  postImage: "https://example.com/image1.jpg",
+  categories: ["Google", "Trending", "New"],
+  title: "Loudest à la Madison #1 (L'integral)",
+  summary:
+    "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
+  postDate: "22 July 2024",
+  comments: 10,
+  link: "/blog/link1",
+};
 
 const posts = [
     {
-        "postImage": "https://example.com/image1.jpg",
+        "postImage": "/src/assets/posts/unsplash_dEGu-oCuB1Y.png",
         "categories": [
             "Google",
             "Trending",
@@ -32,7 +29,7 @@ const posts = [
         "link": "/blog/link1"
     },
     {
-        "postImage": "https://example.com/image2.jpg",
+        "postImage": "/src/assets/posts/unsplash_hHdHCfAifHU.png",
         "categories": [
             "Tech",
             "Innovation",
@@ -45,7 +42,7 @@ const posts = [
         "link": "/blog/link2"
     },
     {
-        "postImage": "https://example.com/image3.jpg",
+        "postImage": "/src/assets/posts/unsplash_tVEqStC2uz8.png",
         "categories": [
             "Health",
             "Wellness",
@@ -57,14 +54,26 @@ const posts = [
         "comments": 5,
         "link": "/blog/link3"
     }
-]
+];
 
 function PostsGrid() {
-    return (
-        <div className={styles.postGrid}>
-            <PostsCard />
-        </div>
-    )
+  return (
+    <div className={styles.postGrid}>
+      {posts.map((post) => {
+        return (
+          <PostsCard
+            PostTitle={post.title}
+            PostCategories={post.categories}
+            PostImage={post.postImage}
+            PostSummary={post.summary}
+            PostDate={post.postDate}
+            PostComments={post.comments}
+            PostLink={post.link}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
-export default PostsGrid
+export default PostsGrid;

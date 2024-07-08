@@ -1,39 +1,60 @@
 import styles from './PostsCard.module.css'
-import postImage from '../../assets/posts/unsplash_dEGu-oCuB1Y.png'
 import { Icon } from '@iconify/react/dist/iconify.js'
 
-function PostsCard() {
+type PostsCardType = {
+
+PostTitle : string;
+PostCategories : Array<string>;
+PostImage : string;
+PostSummary : string;
+PostDate: string;
+PostComments: number;
+PostLink: string;
+
+
+
+}
+
+
+function PostsCard(props: PostsCardType) {
+
+    const {
+
+        PostTitle,
+        PostCategories,
+        PostImage,
+        PostSummary,
+        PostDate,
+        PostComments,
+        PostLink } = props
+
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.imageWrapper}>
-                <span>New</span>
-                <img src={postImage} />
+                {<span>New</span>}
+                <img src={PostImage} />
             </div>
             <div className={styles.info}>
                 <div className={styles.categories}>
-                    <span>Google</span>
-                    <span>Treding</span>
-                    <span>New</span>
+                 {PostCategories.map ((PostCategories) => <span>{PostCategories}</span>)}
                 </div>
-                <h3 className={styles.title}>Loudest à la Madison #1
-                    (L'integral)</h3>
+                <h3 className={styles.title}>{PostTitle}</h3>
                 <p className={styles.summary}>
-                    We focus on ergonomics and meeting
-                    you where you work. It's only a
-                    keystroke away.
+                    {PostSummary}
                 </p>
                 <div className={styles.postMeta}>
                     <div className={styles.metadata}>
                         <Icon icon="mdi:clock-outline" height="2rem" />
-                        <span>22 July 2024</span>
+                       {PostDate}
                     </div>
                     <div className={styles.metadata}>
                         <Icon icon="ooui:chart" height="2rem" />
-                        <span>10 comments</span>
+                        {PostComments}
                     </div>
                 </div>
-                <a href="/blog/link">
-                    Learn More
+                <a href={PostLink}>
+                Learn More
                     <Icon icon="material-symbols-light:chevron-forward" height="2.5rem" />
                 </a>
             </div>
