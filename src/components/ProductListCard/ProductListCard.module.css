@@ -1,7 +1,7 @@
 .productCard {
 	width: 100%;
 	display: grid;
-	grid-template-columns: auto 3fr 1fr;
+	grid-template-columns: auto 1fr;
 }
 
 .productCard img {

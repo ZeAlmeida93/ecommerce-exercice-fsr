@@ -1,0 +1,85 @@
+.productCard {
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto 3fr 1fr;
+}
+
+.productCard img {
+	aspect-ratio: 1 / 1;
+	max-width: 20rem;
+	object-fit: cover;
+	object-position: top center;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 2.5rem;
+	font-size: 1.6rem;
+	font-weight: bold;
+	padding: 2.5rem;
+}
+
+.name {
+	color: var(--black);
+}
+
+.description {
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: var(--t-grey);
+}
+
+.variations,
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.price {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	gap: 1.5rem;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.oldPrice {
+	text-decoration: line-through;
+	color: var(--t-muted);
+}
+
+.currentPrice {
+	font-size: 2.2rem;
+	color: var(--t-grey);
+}
+
+.colors {
+	display: flex;
+	gap: 0.6rem;
+}
+
+.colors span {
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 100%;
+	background-color: black;
+}
+
+.actions {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.actions button {
+	padding: 1rem 2rem;
+	color: var(--t-white);
+	font-weight: bold;
+	background-color: var(--t-primary);
+	border: 0.1rem solid var(--t-primary);
+	border-radius: 0.5rem;
+}
